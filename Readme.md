@@ -1,8 +1,11 @@
 # Full-Stack-Journey
 ### 1.BackEnd Things :-
-- Express
+- Basic Express Start
+- Data Handle Through Various Requests
+    - Req Through headers (1)
+    - Req Through body (2)
+    - Req Through query (3)
+    - Req Through params (4)
 - MiddleWare
-- Zod
-- JwtToken
-- MongoDB
-- Assignment (Udemy Like Simple BackEnd)
+    - Assignment
+- Zod Validation

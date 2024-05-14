@@ -9,3 +9,7 @@
 - MiddleWare
     - Assignment
 - Zod Validation
+    - Assignment
+- Jwt Token
+    - Assignment
+- Global Cache

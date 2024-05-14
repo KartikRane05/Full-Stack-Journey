@@ -1,0 +1,1 @@
+Take username and passoword from the body and generate the token

@@ -1,0 +1,5 @@
+create the simple todo application
+2 * input box one for title other for description
+button to addtodo
+todo need to displayed
+and todo has button which onclick change its content to Done

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution-2</title>
+</head>
+<body>
+    <script>
+        let id = 1;
+        function AddTodo(){
+            const title = document.getElementById("title").value
+            const description = document.getElementById("description").value
+            const datafortodo = CreateThings(title,description,id)
+            const parent = document.getElementById("parent")
+            parent.appendChild(datafortodo);
+            id++
+        }
+        function CreateThings(title,description,id){
+            const main = document.createElement("div")
+            main.setAttribute("id",id)
+            const firstreq = document.createElement("div")
+            firstreq.innerHTML = title
+            const secondreq = document.createElement("div")
+            secondreq.innerHTML = description
+            const thirdreq = document.createElement("button")
+            thirdreq.innerHTML = "Mark As Done"
+            thirdreq.setAttribute("onClick",`Opearation(${id})`)
+            main.appendChild(firstreq)
+            main.appendChild(secondreq)
+            main.appendChild(thirdreq)
+            return main
+        }
+        function Opearation(id){
+            const ParticularDiv = document.getElementById(id)
+            ParticularDiv.children[2].innerHTML = "Done!"
+        }
+       
+    </script>
+    <input type="text" placeholder="Enter Title" id="title">
+    <input type="text" placeholder="Enter Description" id="description">
+    <button onclick="AddTodo()">Add Todo</button>
+    <div id="parent"></div>
+</body>
+</html>

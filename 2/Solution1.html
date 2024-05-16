@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution-1</title>
+</head>
+<body>
+    <script>
+        let count = 1
+        function UpdateCount(){
+            let button = document.getElementById("btn")
+            button.innerHTML = "count is "+count
+            count++
+        }
+    </script>
+    <button onclick="UpdateCount()" id="btn">count is 0</button>
+</body>
+</html>

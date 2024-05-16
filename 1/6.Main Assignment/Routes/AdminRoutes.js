@@ -1,8 +1,8 @@
 const Router = require("express");
+const router = Router();
 const AdminZodSchema = require("../ZodValidation/Adminzod");
 const { AdminDB, CourseDB } = require("../DB/Db");
 const { AdminMid } = require("../MiddleWare/AdminMid");
-const router = Router();
 const jwt = require("jsonwebtoken");
 const jwtpassword = "123456789"
 // admin signup

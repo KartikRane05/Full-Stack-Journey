@@ -3,8 +3,8 @@ const app = express();
 app.use(express.json());
 const { CourseDB } = require("./DB/Db");
 const AdminRouter = require("./Routes/AdminRoutes");
-const UserRouter = require("./Routes/UserRoutes");
 app.use("/admin",AdminRouter);
+const UserRouter = require("./Routes/UserRoutes");
 app.use("/user",UserRouter);
 app.get("/allcourse",async (req,res)=>{
     const allcourse = await CourseDB.find({});

@@ -16,13 +16,15 @@
 - Main Assignment
 ***
 ### 2.Dom Concepts
-    -getElementById
-    -innerHTML
-    -onclick function
-    -createElement
-    -setAttribute
-    -appendChild
-    -children
-    -how to get the value from the input box
+- getElementById
+- innerHTML
+- onclick function
+- createElement
+- setAttribute
+- appendChild
+- children
+- how to get the value from the input box
 ***
 ### 3.Getting Started With React
+- Counter-App
+- Todo-App

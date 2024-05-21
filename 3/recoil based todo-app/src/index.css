@@ -1,0 +1,6 @@
+.EachTodo{
+    padding: 15px;
+}
+.AllTodo{
+    display: flex;
+}

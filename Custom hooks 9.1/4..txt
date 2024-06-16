@@ -1,0 +1,25 @@
+import React, { useEffect, useState } from "react";
+
+function App(){
+  const [render,setRender] = useState(true);
+  useEffect(()=>{
+    setTimeout(() => {
+      setRender(r=>!r)
+    }, 5000);
+  })
+  return<>
+      {render?<MyComponent/>:<div></div>}
+  </>
+}
+export default App;
+class MyComponent extends React.Component{
+  componentDidMount(){
+    console.log("Component Mounted");
+  }
+  componentWillUnmount(){
+    console.log("Component UnMounted");
+  }
+  render(){
+    return <div>from inside my Component</div>
+  }
+}

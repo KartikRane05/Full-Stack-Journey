@@ -1,0 +1,19 @@
+import { useEffect, useState } from "react";
+function App(){
+  const [todo,setTodo]= useState([]);
+  useEffect(()=>{
+    fetch("https://sum-server.100xdevs.com/todos")
+    .then((response)=>response.json())
+    .then((data)=>setTodo(data.todos))
+  },[]);
+  const Eachtodo = todo.map((e,index)=>(
+    <div key={index}>
+      <p>{e.title}</p>
+      <p>{e.description}</p>
+    </div>
+  ))
+    return <>
+    {Eachtodo}
+    </>
+}
+export default App;

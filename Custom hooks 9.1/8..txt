@@ -1,0 +1,34 @@
+import React from 'react';
+import useSWR from 'swr';
+
+async function fetcher(url) {
+  return fetch(url).then((res) => res.json());
+}
+function MainComp() {
+  const { data, error } = useSWR('https://sum-server.100xdevs.com/todos', fetcher);
+  if (error) {
+    return <div>Failed to load data</div>;
+  }
+  if (!data) {
+    return <div>Loading...</div>;
+  }
+  console.log(data)
+  return (
+    <div>
+      {data.todos.map((todo) => (
+        <Track key={todo.id} todo={todo} />
+      ))}
+    </div>
+  );
+}
+function Track({ todo }) {
+  return (
+    <div>
+      <strong>{todo.title}</strong>
+      <p>{todo.description}</p>
+    </div>
+  );
+}
+export default function App() {
+  return <MainComp />;
+}

@@ -1,0 +1,43 @@
+import axios from "axios";
+import { useEffect } from "react";
+import { useState } from "react";
+function useTodos(time){
+  const[todo,setTodo] = useState([]);
+  const[loading,setLoading]=useState(true);
+  useEffect(()=>{
+    setInterval(() => {
+      axios.get("https://sum-server.100xdevs.com/todos")
+      .then(res=>{
+        setTodo(res.data.todos);
+        setLoading(false)
+      })
+    }, time*1000);
+    
+    axios.get("https://sum-server.100xdevs.com/todos")
+    .then(res=>{
+      setTodo(res.data.todos);
+      setLoading(false)
+    })
+  },[]);
+  return {todo,loading};
+}
+function App(){
+  const {todo,loading} = useTodos(5);
+  if(loading){
+    return<>
+      Loading..........
+    </>
+  }
+  return<>
+   {todo.map(todo=><Track todo={todo}/>)}   
+  </>
+}
+function Track({todo}){
+    return <div>
+      {todo.title}
+      <br />
+      {todo.description}
+      <br />
+    </div>
+}
+export default App;
